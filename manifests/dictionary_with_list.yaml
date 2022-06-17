@@ -1,0 +1,11 @@
+#this YAML file contains a dictionary, and that dictionary contains a list
+
+
+Employee:
+  Name: Jacob
+  Sex: Male
+  Age: 30
+  Title: Systems Engineer
+  Projects:
+    -  Automation
+    -  Support

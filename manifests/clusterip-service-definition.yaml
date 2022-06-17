@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: back-end
+spec:
+  type: ClusterIP
+  ports:
+    -
+      targetPort: 8080          #this is the port the pod itself is using
+      port: 80                #this is the port the service itself is listening on; the port users/other services would target to communicate with the service
+  selector:                   #selector specifies labels so Kubernetes can map the desired pods to the service
+    app: myapp
+    type: back-end

@@ -1,0 +1,19 @@
+#this is a sample YAML file for defining a pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:              #this is a dictionary/map
+    app: nginx
+    tier: frontend
+spec:
+  containers:           #this is an array/list. In VSCode, the outline will represent a list as square brackets
+    -                   #the first item in the list is a dictionary. In VSCode, the outline will represent a dictionary as curly braces
+      name: nginx
+      image: nginx      #note that the string you provide for the image is not validated, so be sure that image actually exists in the repository you're using
+      command: ["sleep", "5000"]
+      env:
+        -
+          name: POSTGRES_PASSWORD
+          value: mysecretpassword

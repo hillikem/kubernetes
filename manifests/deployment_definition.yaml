@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        -
+          name: nginx-container     #the name is a required field
+          image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end        #the selector(s) identified here must be present in the pod template under labels

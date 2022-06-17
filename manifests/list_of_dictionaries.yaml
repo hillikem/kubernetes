@@ -1,0 +1,17 @@
+#this YAML file contains a list of dictionaries
+
+Employee:            #'employee' is a dictionary
+  Name: Jacob
+  Sex: Male
+  Age: 30
+  Title: Systems Engineer
+  Projects:
+    - Automation
+    - Support
+  Payslips:         #'payslips' is a dictionary
+    -  Month: June    #the dash indicates that this is the first item in the list, and the item in the list is a dictionary
+       Wage: 4000
+    -  Month: July
+       Wage: 4500
+    -  Month: August
+       Wage: 4000

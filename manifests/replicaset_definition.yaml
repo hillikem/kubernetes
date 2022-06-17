@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:                   #the selector must match one or more of these labels
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        -
+          name: nginx-container
+          image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end            #the replicaset will only monitor pods which have this label applied to them, even if the replicaset did not create the pod
